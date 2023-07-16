@@ -28,9 +28,26 @@ const error = (err = null, status = 200) => {
     }
 };
 
+const lastInsertedId = (res) => {
+    if (res.hasOwnProperty('id')) {
+        return {
+            status: 200,
+            success: true,
+            lastInsertId: res.id
+        };
+    } else {
+        return {
+            status: 200,
+            success: true,
+            lastInsertId: res
+        };
+    }
+} 
+
 const responses = {
     success,
-    error
+    error,
+    lastInsertedId
 };
 
 module.exports = responses;
