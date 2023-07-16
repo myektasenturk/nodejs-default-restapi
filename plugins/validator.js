@@ -69,7 +69,7 @@ const all = async (params, rules) => {
               break;
 
             default:
-              if (rule.search('unique') >= 0 && params[key] !== undefined) {
+              if (rule.search('unique') >= 0 && params[key] !== undefined && params[key] !== null) {
                 let uniqueArr = rule.split(":")[1].split(",");
 
                 if (uniqueArr.length === 4) {
