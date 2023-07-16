@@ -9,7 +9,7 @@
     "pg": "^8.11.1",
     "socket.io": "^4.7.1"
   },
-  "name": "nj",
+  "name": "nodejs-default-restapi",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
