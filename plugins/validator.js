@@ -95,13 +95,13 @@ const all = async (params, rules) => {
                 if (uniqueArr.length === 4) {
                   let is = await knex(uniqueArr[0]).where(uniqueArr[1], params[key]).whereNot(uniqueArr[3], uniqueArr[2]).first();
 
-                  if (is === undefined) {
+                  if (is !== undefined) {
                     setError(key, "unique");
                   }
                 } else if (uniqueArr.length >= 2) {
                   let is = await knex(uniqueArr[0]).where(uniqueArr[1], params[key]).first();
 
-                  if (is === undefined) {
+                  if (is !== undefined) {
                     setError(key, "unique");
                   }
                 } else {
